@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Storm League — Demo Uygulama</title>
+  <meta name="description" content="Storm League benzeri demo site — statik uygulama">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Storm League</h1>
+      <nav class="nav">
+        <a href="#features">Özellikler</a>
+        <a href="#about">Hakkında</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Hoş geldiniz</h2>
+        <p>Storm League temalı, basit, hızlı ve mobil uyumlu demo uygulama.</p>
+        <a class="btn" href="#contact">İletişime Geç</a>
+      </div>
+    </section>
+
+    <section id="features" class="features container">
+      <h3>Özellikler</h3>
+      <ul>
+        <li>Hafif, statik HTML/CSS/JS</li>
+        <li>Responsive tasarım</li>
+        <li>Basit iletişim formu (localStorage ile demo)</li>
+      </ul>
+    </section>
+
+    <section id="about" class="about container">
+      <h3>Hakkında</h3>
+      <p>Bu repo, sağlanan site adresine benzer bir kullanıcı arayüzünü hızlıca hayata geçirmek için hazırlanmış başlangıç iskeletidir. İsterseniz backend, veritabanı veya gerçek form gönderimi ekleyebilirim.</p>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h3>İletişim</h3>
+      <form id="contactForm">
+        <label>İsim
+          <input type="text" name="name" required>
+        </label>
+        <label>E-posta
+          <input type="email" name="email" required>
+        </label>
+        <label>Mesaj
+          <textarea name="message" required></textarea>
+        </label>
+        <button type="submit" class="btn">Gönder</button>
+        <p id="formStatus" class="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 Storm League Demo — Andry777912</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
