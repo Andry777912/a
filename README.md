@@ -1,36 +1,26 @@
-# Storm League — Demo Uygulama
+# Storm League — Fullstack Demo (Next.js + Prisma + SQLite)
 
-Bu depo, https://stormleague.gt.tc/ adresine benzeyen basit bir ön yüz demo uygulamasıdır. Hedef: hızlıca çalışır bir statik site sağlamak ve GitHub Pages ile yayınlamak.
+Bu repo, statik demo yerine tam bir uygulama istenince hızlıca deploy edilebilecek bir başlangıç uygulamasıdır.
 
-İçerikler
-- `index.html` — Ana sayfa (hero, özellikler, iletişim formu)
-- `styles.css` — Tasarım stilleri
-- `script.js` — İletişim formu doğrulama + localStorage demo
+Özellikler
+- Next.js (pages router) + API routes
+- SQLite + Prisma ORM (mesaj kaydı)
+- Basit admin sayfası: /admin (parola ile erişip mesajları görebilirsiniz)
 
-Nasıl çalıştırılır (yerel)
-1. Depoyu klonlayın: `git clone https://github.com/Andry777912/a.git`
-2. Dizine girin: `cd a`
-3. Basit bir statik sunucu ile çalıştırın:
-   - Python 3: `python -m http.server 8000`
-   - Node: `npx serve .`
-4. Tarayıcıda `http://localhost:8000` açın.
+Hızlı başlatma (yerel)
+1. Node.js (16/18) yüklü olsun.
+2. Depoyu klonlayın: git clone https://github.com/Andry777912/a.git
+3. Dizine girin: cd a
+4. Paketleri yükleyin: npm install
+5. Prisma Client oluşturun: npx prisma generate
+6. Veritabanını oluşturun: npx prisma db push
+7. Ortam değişkeni ayarlayın: kopyalayın .env.example -> .env ve ADMIN_PASS değerini değiştirin.
+8. Geliştirme sunucusunu başlatın: npm run dev
+9. Tarayıcıda http://localhost:3000 açın.
 
-GitHub Pages ile yayınlama
-1. Repoda `main` dalında `index.html` olduğu için GitHub Pages kullanımına uygundur.
-2. GitHub'da repoya gidin: Settings → Pages → Source bölümünden "Branch: main / / (root)" seçin ve Save yapın.
-3. Yayın URL'si genelde: `https://Andry777912.github.io/a/` olacaktır. (Yayınlama sırasında birkaç dakika sürebilir.)
+Deployment
+- Vercel ile kolayca deploy edebilirsiniz (GitHub bağlantısı). Vercel'de Environment Variable olarak ADMIN_PASS ekleyin.
+- Özel alan adı bağlamak isterseniz DNS'de yönlendirme yapıp Vercel ayarlarından domain ekleyin.
 
-Özel alan adı (isteğe bağlı)
-- Özel alan adı (örneğin `stormleague.gt.tc`) kullanmak isterseniz, DNS'de `CNAME` kaydı ile `Andry777912.github.io`'ya yönlendirme yapın; ardından repo köküne `CNAME` dosyası ekleyin veya Pages ayarlarında alan adını girin.
-
-Form davranışı ve gizlilik
-- Şu an iletişim formu sadece tarayıcı `localStorage`'a kaydeder; veriler sunucuya gönderilmez.
-- Gerçek e-posta bildirimleri veya veritabanı isterseniz Formspree/Netlify/Vercel serverless veya bir backend ekleyebilirim.
-
-Gelecek adımlar (ben yapabilirim)
-- GitHub Pages yayını otomatik olarak kontrol edip size canlı URL gönderebilirim.
-- Formu Formspree veya serverless ile gerçek e-posta alacak şekilde entegre edebilirim.
-- İsterseniz stormleague.gt.tc için `CNAME` dosyasını ekleyip DNS yapılandırma adımlarını yönlendirebilirim.
-
-İletişim
-- Bu depoyu ben (Copilot) sizin için hazırladım. Daha fazla değişiklik isterseniz kısa komutlarla söyleyin (ör. "Formu e-posta ile bağla", "Dark temayı değiştir", "Admin panel ekle").
+Notlar
+- Bu demo üretim güvenliği ve ölçeklenebilirlik için ek konfigürasyon gerektirir. SQLite küçük projeler/PoC için uygundur.
